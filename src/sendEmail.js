@@ -11,14 +11,14 @@ router.post('/send-email', (req, res) => {
         port: 465,
         secure: true,
         auth: {
-            user: process.env.EMAIL_USER, // замініть на змінну середовища
-            pass: process.env.EMAIL_PASS // замініть на змінну середовища
+            user: process.env.EMAIL_USER,
+            pass: process.env.EMAIL_PASS
         },
     });
 
     const mailOptions = {
         from: 'No reply',
-        to: process.env.TO_EMAIL, // замініть на адресу отримувача
+        to: process.env.TO_EMAIL,
         subject: 'New order',
         html: `
     <html>
