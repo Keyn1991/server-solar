@@ -4,7 +4,11 @@ const bodyParser = require('body-parser');
 const sendEmailRouter = require('./src/sendEmail');
 
 const app = express();
-app.use(cors());
+
+app.use(cors({
+    origin: '*'
+}));
+
 app.use(bodyParser.json());
 
 app.use('/api', sendEmailRouter);
